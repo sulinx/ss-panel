@@ -1,12 +1,10 @@
 <?php
 require_once '_main.php';
 $ssmin = new \Ss\Etc\Ana();
-$mt = $ssmin->get_month_traffic();
-$mt = $mt/$togb;
-$mt = round($mt,3);
-$active_user = $ssmin->user_active_count();
-$all_user    = $ssmin->user_all_count();
-$node_count  = $ssmin->node_count();
+$mt = $ssmin->getMonthTraffic();
+$active_user = $ssmin->activedUserCount();
+$all_user = $ssmin->allUserCount();
+$node_count = $ssmin->nodeCount();
 ?>
 
     <!-- =============================================== -->

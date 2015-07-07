@@ -5,6 +5,7 @@ require_once '_check.php';
 if(!empty($_POST)){
     $uid = $_POST['user_uid'];
     $name = $_POST['name'];
+    $email = $_POST['email'];
     $passwd = $_POST['passwd'];
     $transfer_enable = $_POST['transfer_enable'];
     $invite_num = $_POST['invite_num'];

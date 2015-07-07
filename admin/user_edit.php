@@ -87,6 +87,9 @@ if(!empty($_GET)){
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
+
+<?php
+require_once '_footer.php'; ?>
 <script>
     $(document).ready(function(){
         $("#submit").click(function(){
@@ -95,13 +98,13 @@ if(!empty($_GET)){
                 url:"_user_edit.php",
                 dataType:"json",
                 data:{
-                    uid: $("#uid").val(),
-                    name: $("#name").val(),
-                    email: $("#email").val(),
-                    passwd: $("#passwd").val(),
-                    transfer_enable: $("#transfer_enable").val(),
-                    invite_num: $("#invite_num").val()
-                },
+					user_uid: $("#user_uid").val(), //拼写错误
+					name: $("#name").val(),
+					email: $("#email").val(),
+					passwd: $("#passwd").val(),
+					transfer_enable: $("#transfer_enable").val()*1024*1024*1024,//流量转换
+					invite_num: $("#invite_num").val()
+				},
                 success:function(data){
                     if(data.ok){
                         $("#msg-error").hide(10);
@@ -128,5 +131,3 @@ if(!empty($_GET)){
         })
     })
 </script>
-<?php
-require_once '_footer.php'; ?>
